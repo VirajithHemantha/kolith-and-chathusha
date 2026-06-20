@@ -7,8 +7,6 @@ export function EnvelopeOpening({ onComplete, onMusicStart }: { onComplete: () =
 
   useEffect(() => {
     if (opened) {
-      if (onMusicStart) onMusicStart();
-      
       // Sequence: wait for open flap + slide up, then fade out scene, then transition
       const fadeTimer = setTimeout(() => {
         setFadeOut(true);
@@ -23,7 +21,7 @@ export function EnvelopeOpening({ onComplete, onMusicStart }: { onComplete: () =
         clearTimeout(completeTimer);
       };
     }
-  }, [opened, onComplete, onMusicStart]);
+  }, [opened, onComplete]);
 
   return (
     <>
@@ -307,11 +305,15 @@ export function EnvelopeOpening({ onComplete, onMusicStart }: { onComplete: () =
             tabIndex={opened ? -1 : 0}
             aria-label="Open invitation"
             onClick={() => {
-              if (!opened) setOpened(true);
+              if (!opened) {
+                if (onMusicStart) onMusicStart();
+                setOpened(true);
+              }
             }}
             onKeyDown={(e) => {
               if (!opened && (e.key === 'Enter' || e.key === ' ')) {
                 e.preventDefault();
+                if (onMusicStart) onMusicStart();
                 setOpened(true);
               }
             }}
