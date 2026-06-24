@@ -5,30 +5,30 @@ const events = [
   {
     time: '6.00 PM',
     title: 'Arrival & Welcome',
-    description: 'Guests gather at Eagle\'s Lakeside for a warm welcome and gathering.',
+    description: 'Guests gather at White Tower Banquet Hall for a warm welcome and gathering.',
     icon: MapPin,
-    color: 'from-neutral-800 to-black'
+    color: 'from-[#8B0020] to-[#800000]'
   },
   {
     time: '6.15 PM',
     title: 'Homecoming Celebration',
     description: 'A beautiful evening as we celebrate our new journey together as husband and wife.',
     icon: Heart,
-    color: 'from-red-500 to-red-600'
+    color: 'from-[#D4AF37] to-[#B8860B]'
   },
   {
     time: '8.00 PM',
     title: 'Wedding Dinner & Reception',
     description: 'A grand banquet dinner to celebrate our union with music, dancing, and heartfelt moments.',
     icon: Utensils,
-    color: 'from-neutral-700 to-black'
+    color: 'from-[#800000] to-[#4A0404]'
   },
   {
     time: '11.00 PM',
     title: 'Farewell',
     description: 'Thank you for joining us as we begin our beautiful journey together. Safe travels home.',
     icon: Sparkles,
-    color: 'from-red-400 to-red-500'
+    color: 'from-[#D4AF37] to-[#8B0020]'
   },
 ];
 
@@ -36,7 +36,7 @@ export function EventTimeline() {
   return (
     <div className="relative max-w-5xl mx-auto px-4 py-12">
       {/* Central Line */}
-      <div className="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#E60000]/0 via-[#E60000]/50 to-[#E60000]/0 hidden md:block" />
+      <div className="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#800000]/0 via-[#800000]/50 to-[#800000]/0 hidden md:block" />
 
       <div className="space-y-16 relative">
         {events.map((event, index) => {
@@ -58,9 +58,9 @@ export function EventTimeline() {
                 <motion.div
                   whileInView={{ scale: [0, 1.2, 1] }}
                   transition={{ duration: 0.5, delay: index * 0.2 }}
-                  className="w-6 h-6 rounded-full bg-white border-4 border-[#E60000] shadow-[0_0_15px_rgba(212,175,55,0.4)] flex items-center justify-center"
+                  className="w-6 h-6 rounded-full bg-white border-4 border-[#8B0020] shadow-[0_0_15px_rgba(212,175,55,0.6)] flex items-center justify-center"
                 >
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#E60000] group-hover:scale-150 transition-transform" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] group-hover:scale-150 transition-transform" />
                 </motion.div>
               </div>
 
@@ -68,10 +68,10 @@ export function EventTimeline() {
               <div className="hidden md:flex w-1/2 px-12 justify-end group-even:justify-start">
                 <motion.div
                   whileHover={{ x: isEven ? 10 : -10 }}
-                  className={`flex items-center gap-3 px-6 py-2 rounded-full border border-[#E60000]/20 bg-[#000000]/5 backdrop-blur-sm shadow-sm`}
+                  className={`flex items-center gap-3 px-6 py-2 rounded-full border border-[#D4AF37]/30 bg-[#800000]/5 backdrop-blur-sm shadow-sm`}
                 >
-                  <Clock className="w-4 h-4 text-[#E60000]" />
-                  <span className="font-serif text-[#000000] font-bold text-lg">{event.time}</span>
+                  <Clock className="w-4 h-4 text-[#8B0020]" />
+                  <span className="font-serif text-[#800000] font-bold text-lg">{event.time}</span>
                 </motion.div>
               </div>
 
@@ -79,35 +79,35 @@ export function EventTimeline() {
               <div className="w-full md:w-1/2 pl-10 md:pl-0">
                 <motion.div
                   whileHover={{ y: -5, scale: 1.02 }}
-                  className="relative p-8 rounded-3xl bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_20px_40px_rgba(0,0,0,0.05)] overflow-hidden group-hover:shadow-[0_25px_50px_rgba(139,51,85,0.08)] transition-all duration-500"
+                  className="relative p-8 rounded-3xl bg-white/60 backdrop-blur-xl border border-[#D4AF37]/20 shadow-[0_20px_40px_rgba(128,0,0,0.05)] overflow-hidden group-hover:shadow-[0_25px_50px_rgba(139,0,32,0.1)] transition-all duration-500"
                 >
                   {/* Decorative corner accent */}
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-[#E60000]/10 to-transparent rounded-bl-[100px] pointer-events-none transition-transform group-hover:scale-110" />
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-[#D4AF37]/20 to-transparent rounded-bl-[100px] pointer-events-none transition-transform group-hover:scale-110" />
 
                   <div className="flex items-start gap-5">
-                    <div className={`p-4 rounded-2xl bg-gradient-to-br from-[#000000] to-[#333333] text-white shadow-lg`}>
+                    <div className={`p-4 rounded-2xl bg-gradient-to-br ${event.color} text-white shadow-lg`}>
                       <Icon className="w-6 h-6" />
                     </div>
 
                     <div className="flex-1">
                       {/* Mobile Time */}
-                      <div className="md:hidden flex items-center gap-1.5 text-[#E60000] font-serif font-bold text-sm mb-2 uppercase tracking-widest">
+                      <div className="md:hidden flex items-center gap-1.5 text-[#8B0020] font-serif font-bold text-sm mb-2 uppercase tracking-widest">
                         <Clock className="w-3.5 h-3.5" />
                         {event.time}
                       </div>
 
-                      <h3 className="text-2xl font-serif text-[#000000] mb-3 group-hover:text-[#E60000] transition-colors">
+                      <h3 className="text-2xl font-serif text-[#4A0404] mb-3 group-hover:text-[#8B0020] transition-colors">
                         {event.title}
                       </h3>
 
-                      <p className="text-gray-600 leading-relaxed font-serif text-lg italic opacity-90">
+                      <p className="text-gray-700 leading-relaxed font-serif text-lg italic opacity-90">
                         {event.description}
                       </p>
                     </div>
                   </div>
 
                   {/* Bottom Line Accent */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#E60000] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D4AF37] via-[#8B0020] to-[#800000] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
                 </motion.div>
               </div>
             </motion.div>
