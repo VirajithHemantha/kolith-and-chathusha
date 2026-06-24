@@ -45,24 +45,24 @@ export function AdminPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-neutral-100 py-12 px-4 sm:px-6 lg:px-8 font-serif text-[#000000] flex items-center justify-center">
-      <div className="w-full max-w-md bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-pink-100">
+    <div className="min-h-screen bg-gradient-to-br from-[#f8ecec] via-white to-neutral-100 py-12 px-4 sm:px-6 lg:px-8 font-serif text-[#4A0404] flex items-center justify-center">
+      <div className="w-full max-w-md bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden border border-[#D4AF37]/30">
         <div className="px-6 py-8">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-serif tracking-widest uppercase mb-2">Link Generator</h2>
-            <p className="text-gray-500 font-sans text-sm">Create personalized invitation links</p>
+            <h2 className="text-3xl font-serif tracking-widest uppercase mb-2 text-[#800000]">Link Generator</h2>
+            <p className="text-[#8B0020]/70 font-sans text-sm">Create personalized invitation links</p>
           </div>
 
           <div className="space-y-6 font-sans">
             <div>
-              <label htmlFor="prefix" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="prefix" className="block text-sm font-medium text-[#4A0404] mb-1">
                 Prefix
               </label>
               <select
                 id="prefix"
                 value={prefix}
                 onChange={(e) => setPrefix(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#000000] focus:border-transparent outline-none transition-all bg-white"
+                className="w-full px-4 py-3 rounded-lg border border-[#D4AF37]/40 focus:ring-2 focus:ring-[#800000] focus:border-transparent outline-none transition-all bg-white"
               >
                 {PREFIXES.map(p => (
                   <option key={p} value={p}>{p}</option>
@@ -71,7 +71,7 @@ export function AdminPage() {
             </div>
 
             <div>
-              <label htmlFor="guestName" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="guestName" className="block text-sm font-medium text-[#4A0404] mb-1">
                 Guest Name
               </label>
               <input
@@ -80,32 +80,32 @@ export function AdminPage() {
                 value={guestName}
                 onChange={(e) => setGuestName(e.target.value)}
                 placeholder="e.g. John Doe"
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#000000] focus:border-transparent outline-none transition-all bg-white"
+                className="w-full px-4 py-3 rounded-lg border border-[#D4AF37]/40 focus:ring-2 focus:ring-[#800000] focus:border-transparent outline-none transition-all bg-white"
               />
             </div>
 
             <button
               onClick={handleGenerate}
               disabled={!guestName.trim()}
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#E60000] to-[#B91C1C] text-white font-serif text-lg tracking-widest uppercase shadow-lg hover:scale-[1.02] transition-transform disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 mt-4"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#8B0020] to-[#800000] text-white font-serif text-lg tracking-widest uppercase shadow-[0_4px_15px_rgba(139,0,32,0.3)] hover:shadow-[0_6px_20px_rgba(212,175,55,0.4)] hover:scale-[1.02] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 mt-4"
             >
               <LinkIcon className="w-5 h-5" />
               Generate Link
             </button>
 
             {generatedLink && (
-              <div className="mt-8 p-4 bg-pink-50/50 rounded-xl border border-pink-100 animate-in fade-in slide-in-from-bottom-2">
-                <p className="text-sm text-gray-600 mb-2 font-medium">Generated Link:</p>
+              <div className="mt-8 p-4 bg-gradient-to-br from-[#fffdfa] to-[#faf5e6] rounded-xl border border-[#D4AF37]/40 shadow-inner animate-in fade-in slide-in-from-bottom-2">
+                <p className="text-sm text-[#800000] mb-2 font-medium">Generated Link:</p>
                 <div className="flex gap-2 items-center">
                   <input
                     type="text"
                     readOnly
                     value={generatedLink}
-                    className="flex-1 w-full px-3 py-2 text-sm bg-white border border-pink-200 rounded-md focus:outline-none text-gray-600"
+                    className="flex-1 w-full px-3 py-2 text-sm bg-white border border-[#D4AF37]/30 rounded-md focus:outline-none text-[#4A0404]"
                   />
                   <button
                     onClick={handleCopy}
-                    className="flex-shrink-0 p-2 text-[#000000] hover:bg-pink-100 rounded-md transition-colors"
+                    className="flex-shrink-0 p-2 text-[#800000] hover:bg-[#D4AF37]/20 rounded-md transition-colors"
                     title="Copy to clipboard"
                   >
                     {copied ? <CheckCircle className="w-5 h-5 text-green-600" /> : <Copy className="w-5 h-5" />}
