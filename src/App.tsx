@@ -288,8 +288,19 @@ export default function App() {
       </section>
 
       {/* Event Details Section */}
-      <section className="py-24 px-4 bg-gradient-to-b from-transparent via-red-50/50 to-transparent relative">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-24 px-4 relative overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <div className="sticky top-0 w-full h-[100svh]">
+            <ImageWithFallback
+              src="/images/4.jpg"
+              alt="Wedding Details Background"
+              className="w-full h-full object-cover object-center blur-[2px] scale-105"
+            />
+          </div>
+          <div className="absolute inset-0 bg-white/85" />
+        </div>
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -437,8 +448,19 @@ export default function App() {
       </section>
 
       {/* Event Timeline Section */}
-      <section id="timeline" className="py-24 px-4 bg-gradient-to-b from-transparent via-red-50/50 to-transparent relative">
-        <div className="max-w-6xl mx-auto">
+      <section id="timeline" className="py-24 px-4 relative overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <div className="sticky top-0 w-full h-[100svh]">
+            <ImageWithFallback
+              src="/images/5.jpg"
+              alt="Event Timeline Background"
+              className="w-full h-full object-cover object-center blur-[2px] scale-105"
+            />
+          </div>
+          <div className="absolute inset-0 bg-white/85" />
+        </div>
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -458,8 +480,19 @@ export default function App() {
       </section>
 
       {/* Countdown Section */}
-      <section className="py-24 px-4 relative">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-24 px-4 relative overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <div className="sticky top-0 w-full h-[100svh]">
+            <ImageWithFallback
+              src="/images/6.jpg"
+              alt="Countdown Background"
+              className="w-full h-full object-cover object-center blur-[2px] scale-105"
+            />
+          </div>
+          <div className="absolute inset-0 bg-white/85" />
+        </div>
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -479,8 +512,19 @@ export default function App() {
       </section>
 
       {/* RSVP Section */}
-      <section id="rsvp" className="py-24 px-4 bg-gradient-to-b from-transparent via-red-50/50 to-transparent relative">
-        <div className="max-w-6xl mx-auto">
+      <section id="rsvp" className="py-24 px-4 relative overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <div className="sticky top-0 w-full h-[100svh]">
+            <ImageWithFallback
+              src="/images/7.jpg"
+              alt="RSVP Background"
+              className="w-full h-full object-cover object-center blur-[2px] scale-105"
+            />
+          </div>
+          <div className="absolute inset-0 bg-white/85" />
+        </div>
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -500,8 +544,19 @@ export default function App() {
       </section>
 
       {/* Blessing Messages Section */}
-      <section className="py-24 px-4 bg-gradient-to-b from-transparent via-red-50/30 to-transparent relative">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-24 px-4 relative overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <div className="sticky top-0 w-full h-[100svh]">
+            <ImageWithFallback
+              src="/images/4.jpg"
+              alt="Blessings Background"
+              className="w-full h-full object-cover object-center blur-[2px] scale-105"
+            />
+          </div>
+          <div className="absolute inset-0 bg-white/85" />
+        </div>
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
